@@ -39,7 +39,7 @@ if [[ ! -d $VOLUME_HOME/csc_lrv3_1 ]]; then
     # Create the database
     mysql -uroot -e \
         "CREATE DATABASE csc_lrv3_1; \
-         GRANT ALL PRIVILEGES ON csc_lrv3_1.* TO 'csc_lrv3_1'@'localhost' \
+         GRANT ALL PRIVILEGES ON csc_lrv3_1.* TO 'ideagen'@'localhost' \
          IDENTIFIED BY '$IDEAGEN_PASSWORD'; \
          FLUSH PRIVILEGES;"
 
