@@ -28,11 +28,11 @@ if [[ ! -d $VOLUME_HOME/csc_lrv3_1 ]]; then
     done
 
     # Generate a random password for the ideagen MySQL user.
-    MAGENTO_PASSWORD=`pwgen -c -n -1 12`
+    IDEAGEN_PASSWORD=`pwgen -c -n -1 12`
 
     echo "========================================================================"
     echo
-    echo "MySQL ideagen user password:" $MAGENTO_PASSWORD
+    echo "MySQL ideagen user password:" $IDEAGEN_PASSWORD
     echo
     echo "========================================================================"
 
@@ -40,7 +40,7 @@ if [[ ! -d $VOLUME_HOME/csc_lrv3_1 ]]; then
     mysql -uroot -e \
         "CREATE DATABASE csc_lrv3_1; \
          GRANT ALL PRIVILEGES ON csc_lrv3_1.* TO 'csc_lrv3_1'@'localhost' \
-         IDENTIFIED BY '$MAGENTO_PASSWORD'; \
+         IDENTIFIED BY '$IDEAGEN_PASSWORD'; \
          FLUSH PRIVILEGES;"
 
     mysqladmin -uroot shutdown
